@@ -1,0 +1,61 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "./ZombieFactory.sol";
+
+// Interface describing the one function we need from the CryptoKitties contract
+interface KittyInterface {
+    function getKitty(uint256 _id)
+        external
+        view
+        returns (
+            bool isGestating,
+            bool isReady,
+            uint256 cooldownIndex,
+            uint256 nextActionAt,
+            uint256 siringWithId,
+            uint256 birthTime,
+            uint256 matronId,
+            uint256 sireId,
+            uint256 generation,
+            uint256 genes
+        );
+}
+
+// Inheritance: ZombieFeeding gets everything from ZombieFactory
+contract ZombieFeeding is ZombieFactory {
+    KittyInterface kittyContract;
+
+    // NOTE: anyone can call this for now. Lesson 3 fixes it with onlyOwner.
+    function setKittyContractAddress(address _address) external {
+        kittyContract = KittyInterface(_address);
+    }
+
+    function feedAndMultiply(
+        uint256 _zombieId,
+        uint256 _targetDna,
+        string memory _species
+    ) public {
+        require(msg.sender == zombieToOwner[_zombieId], "Not your zombie");
+
+        // storage pointer: reads the real zombie from the blockchain
+        Zombie storage myZombie = zombies[_zombieId];
+
+        _targetDna = _targetDna % dnaModulus;
+        uint256 newDna = (myZombie.dna + _targetDna) / 2;
+
+        // Zombies made from kitties get "99" as their last two digits
+        if (keccak256(abi.encodePacked(_species)) == keccak256(abi.encodePacked("kitty"))) {
+            newDna = newDna - (newDna % 100) + 99;
+        }
+
+        _createZombie("NoName", newDna);
+    }
+
+    function feedOnKitty(uint256 _zombieId, uint256 _kittyId) public {
+        uint256 kittyDna;
+        // Multiple return values: skip the ones we don't need, keep the last (genes)
+        (, , , , , , , , , kittyDna) = kittyContract.getKitty(_kittyId);
+        feedAndMultiply(_zombieId, kittyDna, "kitty");
+    }
+}
