@@ -8,6 +8,8 @@ contract ZombieFactory {
     struct Zombie {
         string name;
         uint256 dna;
+        uint32 level;
+        uint32 readyTime;
     }
 
     Zombie[] public zombies;
