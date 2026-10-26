@@ -4,6 +4,7 @@ pragma solidity ^0.8.20;
 contract ZombieFactory {
     uint256 public constant DNA_DIGITS = 16;
     uint256 private constant DNA_MODULUS = 10 ** DNA_DIGITS;
+    uint cooldownTime = 1 days;
 
     struct Zombie {
         string name;
@@ -22,7 +23,7 @@ contract ZombieFactory {
     }
 
     function _createZombie(string memory _name, uint256 _dna) private {
-        zombies.push(Zombie(_name, _dna));
+        zombies.push(Zombie(_name, _dna, 1, uint32(block.timestamp + cooldownTime)));
         uint256 id = zombies.length - 1;
         emit NewZombie(id, _name, _dna);
     }
