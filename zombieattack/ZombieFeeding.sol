@@ -42,11 +42,12 @@ contract ZombieFeeding is ZombieFactory {
         uint256 _zombieId,
         uint256 _targetDna,
         string memory _species
-    ) public {
+    ) internal {
         require(msg.sender == zombieToOwner[_zombieId], "Not your zombie");
 
         // storage pointer: reads the real zombie from the blockchain
         Zombie storage myZombie = zombies[_zombieId];
+        require(_isReady(myZombie));
 
         _targetDna = _targetDna % dnaModulus;
         uint256 newDna = (myZombie.dna + _targetDna) / 2;
@@ -57,6 +58,7 @@ contract ZombieFeeding is ZombieFactory {
         }
 
         _createZombie("NoName", newDna);
+        _triggerCooldown(myZombie);
     }
 
     function feedOnKitty(uint256 _zombieId, uint256 _kittyId) public {
