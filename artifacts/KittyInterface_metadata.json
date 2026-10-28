@@ -1,0 +1,126 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getKitty",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isGestating",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isReady",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cooldownIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nextActionAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "siringWithId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "birthTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "matronId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sireId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "generation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genes",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"zombieattack/ZombieFeeding.sol": "KittyInterface"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"zombieattack/ZombieFactory.sol": {
+			"keccak256": "0xe53ed2a5d9d77a84953a71f69661962fe18055dbc952798b6a236db3306e296c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6604e7b8f7068a957a00db7870757030049924abf93928e90f84e6ca7e8b01f7",
+				"dweb:/ipfs/QmNc1gurzjxwysBjkh4yuhB1EbTQdQhuL7LcTEBHLKRc8R"
+			]
+		},
+		"zombieattack/ZombieFeeding.sol": {
+			"keccak256": "0x8bb85862e3954c928e0110f2e04fa5115c633c2645e7b06a65ea63977aec752a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70b5b7d794ae155f9545b10553687157f44d9ab287ccb20bb7f8ac47dd6d9437",
+				"dweb:/ipfs/QmZHgWMnMqb1NswYPrcoZwKJLNqkSyy5gy3gc5v6QECXhG"
+			]
+		},
+		"zombieattack/ownable.sol": {
+			"keccak256": "0xc227bd3259b4c372f1ca285f863d43943581f7f2356fa0b550a4760da85b67bd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3386f46af30f63cb0cbe120833335787f48dda0fad0191bd68240550f7d4ef25",
+				"dweb:/ipfs/QmYgfXyhRezkDdSZWXuxko7HPn1X6RCpPBxzRbHM3M7gXy"
+			]
+		}
+	},
+	"version": 1
+}

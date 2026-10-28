@@ -25,6 +25,10 @@ interface KittyInterface {
 // Inheritance: ZombieFeeding gets everything from ZombieFactory
 contract ZombieFeeding is ZombieFactory {
     KittyInterface kittyContract;
+    modifier ownerOf(uint _zombieId) {
+    require(msg.sender == zombieToOwner[_zombieId]);
+    _;
+  }
 
     // NOTE: anyone can call this for now. Lesson 3 fixes it with onlyOwner.
     function setKittyContractAddress(address _address) external onlyOwner {
@@ -42,8 +46,8 @@ contract ZombieFeeding is ZombieFactory {
         uint256 _zombieId,
         uint256 _targetDna,
         string memory _species
-    ) internal {
-        require(msg.sender == zombieToOwner[_zombieId], "Not your zombie");
+    ) internal ownerOf(_zombieId){
+    
 
         // storage pointer: reads the real zombie from the blockchain
         Zombie storage myZombie = zombies[_zombieId];
