@@ -25,7 +25,7 @@ interface KittyInterface {
 // Inheritance: ZombieFeeding gets everything from ZombieFactory
 contract ZombieFeeding is ZombieFactory {
     KittyInterface kittyContract;
-    modifier ownerOf(uint _zombieId) {
+    modifier onlyOwnerOf(uint _zombieId) {
     require(msg.sender == zombieToOwner[_zombieId]);
     _;
   }
@@ -46,7 +46,7 @@ contract ZombieFeeding is ZombieFactory {
         uint256 _zombieId,
         uint256 _targetDna,
         string memory _species
-    ) internal ownerOf(_zombieId){
+    ) internal onlyOwnerOf(_zombieId){
     
 
         // storage pointer: reads the real zombie from the blockchain
