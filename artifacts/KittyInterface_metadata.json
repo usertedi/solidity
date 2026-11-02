@@ -83,7 +83,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"zombieattack/ZombieFeeding.sol": "KittyInterface"
+			"diag/ZombieFeeding2.sol": "KittyInterface"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -97,28 +97,26 @@
 		"remappings": []
 	},
 	"sources": {
-		"zombieattack/ZombieFactory.sol": {
-			"keccak256": "0xe53ed2a5d9d77a84953a71f69661962fe18055dbc952798b6a236db3306e296c",
-			"license": "MIT",
+		"diag/ZombieFactory.sol": {
+			"keccak256": "0x70c42c4933fd2527d2800c3dfa175692e9820e5fb46c4879e21a459749f78de4",
 			"urls": [
-				"bzz-raw://6604e7b8f7068a957a00db7870757030049924abf93928e90f84e6ca7e8b01f7",
-				"dweb:/ipfs/QmNc1gurzjxwysBjkh4yuhB1EbTQdQhuL7LcTEBHLKRc8R"
+				"bzz-raw://b9654d35b2b53e9a4b5d69b32cfca2e54708894c3032e4c0c658427a50ff8a72",
+				"dweb:/ipfs/QmYgLrwX7L4eCCThpVurhsdLKoobKinkfJ6QRHreN89r4n"
 			]
 		},
-		"zombieattack/ZombieFeeding.sol": {
-			"keccak256": "0x8bb85862e3954c928e0110f2e04fa5115c633c2645e7b06a65ea63977aec752a",
+		"diag/ZombieFeeding2.sol": {
+			"keccak256": "0x7a1421baf543f367dbdfe43ec7a3834b6dc22491ecc238a115b2e668a4993a5a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://70b5b7d794ae155f9545b10553687157f44d9ab287ccb20bb7f8ac47dd6d9437",
-				"dweb:/ipfs/QmZHgWMnMqb1NswYPrcoZwKJLNqkSyy5gy3gc5v6QECXhG"
+				"bzz-raw://c237f8cc20c093eb24e48778a75554a9936269778c35d724bc475bd98a56dd40",
+				"dweb:/ipfs/QmX7bGjcLcdretFuF9UU2NVDmxjSfV7N2Gif9cBs3vrRYZ"
 			]
 		},
-		"zombieattack/ownable.sol": {
-			"keccak256": "0xc227bd3259b4c372f1ca285f863d43943581f7f2356fa0b550a4760da85b67bd",
-			"license": "MIT",
+		"diag/ownable.sol": {
+			"keccak256": "0x2e0e2cab7d679c1d0dd51eab881fb93e721d0ce460c2747ea8ae0864a123248f",
 			"urls": [
-				"bzz-raw://3386f46af30f63cb0cbe120833335787f48dda0fad0191bd68240550f7d4ef25",
-				"dweb:/ipfs/QmYgfXyhRezkDdSZWXuxko7HPn1X6RCpPBxzRbHM3M7gXy"
+				"bzz-raw://78e2e0f2c0c15b77076160b8d53804ddf13dc463d51df07cbcd362f335aa0b93",
+				"dweb:/ipfs/QmTS2m3qPzs9pTLMRrPwBSDRqr6t8FXGBU9J1dxDRkA4n4"
 			]
 		}
 	},
